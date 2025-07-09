@@ -1,8 +1,4 @@
-const GetIntrinsic = require("get-intrinsic")
-const ignoreArgument = require("ignore-argument")
-const isFunction = require("is-function")
-
-const $Array = GetIntrinsic('%Array%')
+var nAry = require('ramda.nary')
 
 /**
  * Wrap a function so it's always called with no arguments.
@@ -10,12 +6,10 @@ const $Array = GetIntrinsic('%Array%')
  * @returns {Function} - A new function that ignores all passed arguments
  */
 function noArgsWrapper(fn) {
-  if (!isFunction(fn)) {
+  if (typeof fn !== 'function') {
     throw new TypeError("Expected a function")
   }
-  const ignoreAll = $Array(100).fill(true)
-
-  return ignoreArgument(fn, ...ignoreAll)
+  return nAry(0, fn)
 }
 
 module.exports = noArgsWrapper
