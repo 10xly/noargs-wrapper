@@ -10,8 +10,7 @@ $ npm install noargs-wrapper
 
 ## Usage
 
-This function takes in a function, and returns a wrapper that calls the passed-in function with no arguments, even if arguments are passed in to the wrapper. (unless the function passed in takes over 100 arguments)
-
+This function takes in a function, and returns a wrapper that calls the passed-in function with no arguments, even if arguments are passed in to the wrapper. 
 Here's an example:
 
 ```js
